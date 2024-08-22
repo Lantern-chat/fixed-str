@@ -1,0 +1,17 @@
+[package]
+name = "fixed-str"
+version = "0.1.0"
+edition = "2021"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+rkyv = { version = "0.8.0-alpha.3", optional = true, default-features = false, features = ["bytecheck"] }
+serde = { version = "1.0.208", optional = true, default-features = false }
+schemars = { version = "0.8.12", optional = true }
+
+[features]
+serde = ["dep:serde"]
+rkyv = ["dep:rkyv"]
+schemars = ["dep:schemars"]
+
+default = ["serde"]
